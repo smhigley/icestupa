@@ -78,6 +78,7 @@ h5, h6 { font-weight: bold; }
     margin: 0 0 em-calc(30, 17);
   }
   img { max-width: 100%; }
+  p img { margin: em-calc(10) em-calc(20) em-calc(30); }
 }
 
 .menu {
