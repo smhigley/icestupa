@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     pkg = require('./package.json');
 
 var paths = {
-  styles: './css/style.scss',
+  styles: './scss/style.scss',
   scripts: ['./bower_components/jquery/dist/jquery.min.js', './js/main.js']
 };
 
@@ -48,7 +48,7 @@ gulp.task('lint', function () {
 // Rerun the task when a file changes
 gulp.task('watch', function() {
   gulp.watch('./js/*.js', ['scripts']);
-  gulp.watch('./css/*.scss', ['styles']);
+  gulp.watch('./scss/*.scss', ['styles']);
 });
 
 // The default task (called when you run `gulp` from cli)

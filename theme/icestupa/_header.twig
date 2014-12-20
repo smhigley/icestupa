@@ -15,27 +15,25 @@
       {% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}
     </title>
 
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     {# paths.theme is always a correct path to the current theme. Even if you rename the theme-folder,
        this will keep working. See the documentation on paths: http://docs.bolt.cm/internals#paths #}
-    <link rel="stylesheet" href="{{ paths.theme }}css/app.css">
+    <link rel="stylesheet" href="{{ paths.theme }}css/style.css">
     <script src="{{ paths.theme }}js/modernizr.js"></script>
 </head>
 <body>
 
-  <header role="banner">
+  <header class="page-header" role="banner">
     <nav class="main-menu" role="navigation">
-      <ul>
-        <li class="menu-home"><a href="{{ paths.root }}" class="logo-simple">{{ app.config.get('general/sitename') }}</a></li>
-        {{ menu('main', '_sub_menu.twig') }}
-        <li class="menu-donate"><a href="#">Donate</a></li>
-      </ul>
+      <div class="content-row">
+        <ul class="menu">
+          <li class="menu-home"><a href="{{ paths.root }}" class="logo-simple">{{ app.config.get('general/sitename') }}</a></li>
+          {{ menu('main', '_sub_menu.twig') }}
+          <li class="menu-donate"><a href="/donate">Donate</a></li>
+        </ul>
+      </div>
     </nav>
     <!-- End header -->
   </header>
 
-
-
-<div class="row">
-    <div class="container large-12 columns">

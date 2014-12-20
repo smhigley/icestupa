@@ -2,22 +2,29 @@
 # details: http://docs.bolt.cm/menus
 
 main:
-  - label: Home
-    title: This is the first menu item.
-    path: homepage
-    class: first
-  - label: Second item
-    path: entry/1
+  - label: About
+    path: /about
     submenu:
-      - label: Sub 1
-        path: entry/2
-      - label: Sub 2
-        class: menu-item-class
-        path: entry/3
-      - label: Sub 3
-        path: entry/4
-      - label: Sub 4
-        class: sub-class
-        path: page/3
-  - label: All pages
-    path: pages/
+      - label: Ice Stupa Project
+        path: /about
+      - label: SECMOL School
+        path: /secmol
+      - label: Ladakh Peoples' Alternative University
+        path: /ladakh-peoples-alternative-university
+      - label: Drikun Kagyud Monastery 
+        path: /drikunkagyud-monastery
+  - label: Photos
+    path: /gallery
+  - label: News
+    path: /news
+  - label: Contact
+    path: /contact
+
+footer:
+  - label: About
+    path: /about
+  - label: Contact
+    path: /contact
+  - label: Donate
+    class: donate-link
+    path: /donate

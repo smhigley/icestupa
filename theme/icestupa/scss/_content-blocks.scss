@@ -1,0 +1,93 @@
+.logo-simple {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  &:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 50px;
+    background: url(../images/logo-simple.png) no-repeat center center;
+  }
+}
+
+.hero {
+  position: relative;
+  padding-top: em-calc(28);
+  background: url(../images/hero.jpg) no-repeat center center;
+  background-size: cover;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $dark-blue;
+    @include opacity(0.75);
+  }
+  span {
+    position: relative;
+    z-index: 1;
+  }
+  .logo {
+    display: block;
+    width: 236px;
+    height: 138px;
+    margin: 0 auto em-calc(134);
+    background: url(../images/logo-white.png) no-repeat center center;
+    text-indent: -999px;
+    overflow: hidden;
+  }
+  .tagline {
+    display: block;
+    padding: em-calc(20, 20) em-calc(180, 20);
+    background-color: $dark;
+    color: #fff;
+    font-size: 20px;
+    line-height: #{(30/20)};
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.page-icon {
+  margin: 40px 0 -30px;
+  text-align: center;
+}
+
+.photo-gallery {
+  @include grid-row(nest);
+  li {
+    float: left;
+    width: 33.333%;
+    padding: 0 em-calc(18) em-calc(36);
+  }
+  a {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    &:hover, &:focus {
+      .title { @include translate(0, 0); }
+    }
+  }
+  .title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: em-calc(14, 14);
+    background-color: $dark;
+    background-color: rgba($dark, 0.8);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+    @include translate(0, 100%);
+    @include transition(all 0.3s ease);
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+}

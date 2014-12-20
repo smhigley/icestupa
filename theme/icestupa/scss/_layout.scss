@@ -1,0 +1,196 @@
+html, body {
+  font-size: 16px;
+  font-family: $body-font;
+  font-weight: normal;
+  font-style: normal;
+  color: $dark;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.hide {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.hidden { display: none; }
+
+.tablet {
+  display: none !important;
+  @media #{$medium-down} { display: block !important; }
+}
+.mobile {
+  display: none !important;
+  @media #{$small-only} { display: block !important; }
+}
+
+.desktop {
+  @media #{$medium-down} { display: none !important; }
+}
+
+.row { @include grid-row(); }
+.content-row { @include grid-row($no-columns: true); }
+
+.half {
+  @include grid-column(12);
+  @media #{$small-only} { width: 100%; }
+}
+
+.third {
+  @include grid-column(8);
+  @media #{$small-only} { width: 100%; }
+}
+
+.page-header {
+  margin-bottom: em-calc(60);
+}
+
+.main-menu {
+  position: relative;
+  background-color: $blue;
+  z-index: 4;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    @include clearfix;
+  }
+  li {
+    display: inline-block;
+    position: relative;
+    &:hover {
+      .dropdown {
+        @include opacity(1);
+        visibility: visible;
+      }
+      > a { background-color: $dark-blue; }
+    }
+  }
+  a {
+    display: block;
+    color: $dark;
+    text-decoration: none;
+    line-height: em-calc(96);
+    padding: 0 em-calc(36);
+    &:hover, &:focus {
+      background-color: $dark-blue;
+      color: $dark;
+    }
+  }
+  .dropdown {
+    position: absolute;
+    top: 96px;
+    left: 0;
+    width: 260px;
+    background-color: $blue;
+    text-align: left;
+    border: 1px solid $dark-blue;
+    @include opacity(0);
+    visibility: hidden;
+    @include transition(opacity 0.3s ease);
+    li {
+      display: block;
+      padding: em-calc(10);
+      border-top: 1px solid $dark-blue;
+      &:first-child { border-top: none; }
+    }
+    a {
+      line-height: 1.2;
+      padding: em-calc(16) em-calc(14);
+    }
+  }
+  .menu-donate {
+    a {
+      position: relative;
+      color: $red;
+      &:hover, &:focus { background-color: #cefffb; }
+    }
+    &:hover a { background-color: #cefffb; }
+  }
+  .menu-home {
+    float: left;
+    vertical-align: top;
+    margin-right: em-calc(40);
+    .logo-simple {
+      position: relative;
+      padding:  20px 36px 0 2px;
+      &:before {
+        content: "Home";
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        font-size: 12px;
+        line-height: 1;
+        text-transform: uppercase;
+        @include opacity(0);
+        @include transition(opacity 0.2s ease);
+      }
+      &:hover, &:focus {
+        background-color: transparent;
+        &:before { @include opacity(1); }
+      }
+    }
+    &:hover .logo-simple { background-color: transparent; }
+  }
+}
+
+.main-content {
+  @include grid-column($columns: 9, $center: true);
+}
+
+.page-footer {
+  background-color: $blue;
+  text-align: center;
+  padding: em-calc(36) 0 em-calc(70);
+  margin-top: em-calc(100);
+}
+.footer-content {
+  @include grid-column($columns: 9, $center: true);
+  .logo-simple {
+    width: 30px;
+    height: 50px;
+    margin: 0 auto 18px;
+  }
+  .tagline { margin: 0; }
+  .menu {
+    margin: em-calc(10) 0 em-calc(50);
+    li {
+      display: inline-block;
+      padding: 0 em-calc(10) 0 em-calc(12);
+      border-left: 1px solid $dark;
+      &:first-child { border-left: none; }
+    }
+    a {
+      font-weight: bold;
+      color: $dark;
+      &:hover, &:focus { color: $gold; }
+    }
+  }
+  .socials {
+    @include clearfix;
+    a {
+      display: block;
+      padding: 0 em-calc(40, 17) 0 em-calc(80, 17); 
+      float: left;
+      width: 49%;
+      background-color: $dark-blue;
+      color: $dark;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 60px;
+      &:hover, &:focus {
+        color: $dark;
+        background-color: #fff;
+      }
+    }
+    .twitter {
+      float: right;
+    }
+  }
+}

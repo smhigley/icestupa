@@ -12,7 +12,7 @@ chapters:
     slug: chapters
     singular_slug: chapter
     behaves_like: grouping
-    options: { main: "The main chapter", meta: "Meta Chapter", other: "The other stuff" }
+    options: { main: "Home Page", about: "About Pages", other: "Other Pages" }
     has_sortorder: true
 
 categories:

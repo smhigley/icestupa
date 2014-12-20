@@ -1,0 +1,87 @@
+::-moz-selection {
+  background: #62aaf2;
+  color:#fff;
+  text-shadow: none;
+}
+
+::selection {
+  background:#62aaf2;
+  color:#fff;
+  text-shadow: none;
+}
+
+.icon {
+  font-family: $icon-font;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $text-blue;
+  text-decoration: none;
+  &, &:before, &:after {
+    @include transition(background 0.3s ease, color 0.3s ease);
+  }
+  &:hover, &:focus { color: $gold; }
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+  line-height: #{(30/27)};
+  margin: 40px 0 20px;
+}
+
+h1 + h2, h2 + h3, h3 + h4 {
+  margin-top: -10px;
+}
+
+h1 {
+  font-size: 27px;
+  text-transform: uppercase;
+  color: $gold;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  &.page-title {
+    margin: 80px 0 50px;
+  }
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 19px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 17px;
+  font-weight: bold;
+  color: $gold;
+}
+
+h5, h6 { font-weight: bold; }
+
+.main-content {
+  p, ul, ol, blockquote {
+    font-size: 17px;
+    line-height: #{(30/17)};
+    color: $dark-grey;
+    margin: 0 0 em-calc(30, 17);
+  }
+  img { max-width: 100%; }
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

@@ -44,6 +44,11 @@ contentlisting:
   requirements:
     contenttypeslug:  'Bolt\Controllers\Routing::getPluralContentTypeRequirement'
 
+pagebinding:
+  path:           /{slug}
+  defaults:       { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'page' }
+  contenttype:    pages
+
 # ------------------------------------------------------------------------------
 # Place your own routes here, that have a LOWER priority than the default routes.
 

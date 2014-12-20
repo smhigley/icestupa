@@ -22,17 +22,13 @@ pages:
         slug:
             type: slug
             uses: title
-        image:
-            type: image
-        teaser:
-            type: html
-            height: 150px
+        pageicon:
+            type: select
+            values: [ Ice Stupa, SECMOL, Stupa Line, Single Stupa, Monastery, Prayer Flags, Prayer Wheel, Deer Statue, Yak ]
+            postfix: "Select an icon to appear with the page"
         body:
             type: html
             height: 300px
-        template:
-            type: templateselect
-            filter: '*.twig'
     taxonomy: [ chapters ]
     recordsperpage: 100
 
@@ -66,7 +62,7 @@ news:
             height: 300px
         image:
             type: image
-            group: media
+            group: content
         video:
             type: video
     taxonomy: [ categories, tags ]
@@ -93,7 +89,7 @@ photo:
             uses: title
         image:
             type: image
-            group: media
+            group: content
     taxonomy: [ tags ]
     record_template: photo.twig
     listing_template: gallery.twig

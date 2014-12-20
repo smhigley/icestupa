@@ -26,9 +26,9 @@ $em-base: 16px;
 }
 
 // grid variables
-$row-width: em-calc(980);
+$row-width: em-calc(900);
 $total-columns: 12;
-$column-gutter: em-calc(30);
+$column-gutter: em-calc(20);
 
 // media queries
 $xlarge-bound: 1200;
@@ -53,21 +53,19 @@ $xlarge-up: "only screen and (min-width: #{em-calc($xlarge-bound, 16)})";
 $xlarge-down: "only screen and (max-width: #{em-calc($xlarge-bound, 16)})";
 
 // color variables
-$dark: #1e2f30;
-$grey: #666666;
-$light-grey: #d9d9db;
-$lightest-grey: #f8f8f9;
-$blue: #1c4489;
-$text-blue: #3c70c9;
-$light-blue: #91c0eb;
-$green: #009a4d;
-$yellow: #f9c825;
+$dark: #272432;
+$dark-grey: #505050;
+$blue: #d0f1f7;
+$text-blue: #60afc0;
+$dark-blue: #8ccedc;
+$gold: #eea525;
+$light-gold: #faf8f2;
+$red: #f72123;
 
 // spacing variables
 $paragraph-margin: 20;
 $block-margin: 40;
 
 // fonts
-$heading-font: 'museo_slab', serif;
-$body-font: 'Roboto', sans-serif;
+$body-font: 'Montserrat', sans-serif;
 $icon-font: 'icomoon';
