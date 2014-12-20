@@ -1,0 +1,73 @@
+// base variables and functions
+
+// em calculation
+$em-base: 16px;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-em($value, $base-value: $em-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+
+@function em-calc($values, $base-value: $em-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-em(nth($values, 1), $base-value); }
+
+  $emValues: ();
+  @for $i from 1 through $max {
+    $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
+  }
+  @return $emValues;
+}
+
+// grid variables
+$row-width: em-calc(980);
+$total-columns: 12;
+$column-gutter: em-calc(30);
+
+// media queries
+$xlarge-bound: 1200;
+$large-bound: 960;
+$medium-bound: 880;
+$small-bound: 680;
+$xsmall-bound: 440;
+
+$x-small-only: "only screen and (max-width: #{em-calc($xsmall-bound, 16)})";
+$small-only: "only screen and (max-width: #{em-calc($small-bound, 16)})";
+
+$medium-only: "only screen and (min-width: #{em-calc($small-bound + 1, 16)}) and (max-width: #{em-calc($medium-bound, 16)})";
+$medium-up: "only screen and (min-width: #{em-calc($small-bound + 1, 16)})";
+$medium-down: "only screen and (max-width: #{em-calc($medium-bound, 16)})";
+
+$large-only: "only screen and (min-width: #{em-calc($medium-bound + 1, 16)}) and (max-width: #{em-calc($large-bound, 16)})";
+$large-up: "only screen and (min-width: #{em-calc($medium-bound + 1, 16)})";
+$large-down: "only screen and (max-width: #{em-calc($large-bound, 16)})";
+
+$xlarge-only: "only screen and (min-width: #{em-calc($large-bound + 1, 16)}) and (max-width: #{em-calc($xlarge-bound, 16)})";
+$xlarge-up: "only screen and (min-width: #{em-calc($xlarge-bound, 16)})";
+$xlarge-down: "only screen and (max-width: #{em-calc($xlarge-bound, 16)})";
+
+// color variables
+$dark: #1e2f30;
+$grey: #666666;
+$light-grey: #d9d9db;
+$lightest-grey: #f8f8f9;
+$blue: #1c4489;
+$text-blue: #3c70c9;
+$light-blue: #91c0eb;
+$green: #009a4d;
+$yellow: #f9c825;
+
+// spacing variables
+$paragraph-margin: 20;
+$block-margin: 40;
+
+// fonts
+$heading-font: 'museo_slab', serif;
+$body-font: 'Roboto', sans-serif;
+$icon-font: 'icomoon';

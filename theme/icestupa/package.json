@@ -1,0 +1,21 @@
+{
+  "name": "icestupa",
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-ruby-sass": "latest",
+    "gulp-concat": "latest",
+    "gulp-uglify": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-jshint": "latest",
+    "jshint-stylish": "latest",
+    "gulp-rename": "latest",
+    "gulp-size": "latest",
+    "tmi": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smhigley/icestupa.git"
+  },
+  "author": "Sarah Higley"
+}
