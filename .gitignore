@@ -38,3 +38,6 @@ bower_components
 /bolt.log
 
 *.map
+
+*.psd
+icomoon/

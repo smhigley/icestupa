@@ -81,6 +81,7 @@ html, body {
     &:hover, &:focus {
       background-color: $dark-blue;
       color: $dark;
+      outline: none;
     }
   }
   .dropdown {
@@ -169,14 +170,18 @@ html, body {
     a {
       font-weight: bold;
       color: $dark;
-      &:hover, &:focus { color: $gold; }
+      &:hover, &:focus {
+        color: $dark;
+        text-decoration: underline;
+      }
     }
   }
   .socials {
     @include clearfix;
     a {
       display: block;
-      padding: 0 em-calc(40, 17) 0 em-calc(80, 17); 
+      position: relative;
+      padding: 0 em-calc(40, 17) 0 em-calc(60, 17); 
       float: left;
       width: 49%;
       background-color: $dark-blue;
@@ -184,13 +189,23 @@ html, body {
       font-weight: bold;
       font-size: 17px;
       line-height: 60px;
+      &:before {
+        @extend .icon;
+        font-size: 36px;
+        position: absolute;
+        left: 30px;
+        top: 12px;
+        color: $dark;
+      }
       &:hover, &:focus {
         color: $dark;
         background-color: #fff;
       }
     }
     .twitter {
+      &:before { content: $icon-twitter; }
       float: right;
     }
+    .facebook:before { content: $icon-facebook; }
   }
 }

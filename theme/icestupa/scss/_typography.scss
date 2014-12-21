@@ -1,11 +1,22 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot?-qcoqj4');
+  src:url('fonts/icomoon.eot?#iefix-qcoqj4') format('embedded-opentype'),
+    url('fonts/icomoon.woff?-qcoqj4') format('woff'),
+    url('fonts/icomoon.ttf?-qcoqj4') format('truetype'),
+    url('fonts/icomoon.svg?-qcoqj4#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 ::-moz-selection {
-  background: #62aaf2;
+  background: $dark-blue;
   color:#fff;
   text-shadow: none;
 }
 
 ::selection {
-  background:#62aaf2;
+  background: $dark-blue;
   color:#fff;
   text-shadow: none;
 }

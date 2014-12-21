@@ -575,6 +575,7 @@ html, body {
 .main-menu a:hover, .main-menu a:focus {
   background-color: #8ccedc;
   color: #272432;
+  outline: none;
 }
 .main-menu .dropdown {
   position: absolute;
@@ -699,7 +700,8 @@ html, body {
   color: #272432;
 }
 .footer-content .menu a:hover, .footer-content .menu a:focus {
-  color: #eea525;
+  color: #272432;
+  text-decoration: underline;
 }
 .footer-content .socials:before, .footer-content .socials:after {
   content: " ";
@@ -710,7 +712,8 @@ html, body {
 }
 .footer-content .socials a {
   display: block;
-  padding: 0 2.35294em 0 4.70588em;
+  position: relative;
+  padding: 0 2.35294em 0 3.52941em;
   float: left;
   width: 49%;
   background-color: #8ccedc;
@@ -719,6 +722,13 @@ html, body {
   font-size: 17px;
   line-height: 60px;
 }
+.footer-content .socials a:before {
+  font-size: 36px;
+  position: absolute;
+  left: 30px;
+  top: 12px;
+  color: #272432;
+}
 .footer-content .socials a:hover, .footer-content .socials a:focus {
   color: #272432;
   background-color: #fff;
@@ -726,20 +736,33 @@ html, body {
 .footer-content .socials .twitter {
   float: right;
 }
+.footer-content .socials .twitter:before {
+  content: "\e601";
+}
+.footer-content .socials .facebook:before {
+  content: "\e602";
+}
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?-qcoqj4");
+  src: url("fonts/icomoon.eot?#iefix-qcoqj4") format("embedded-opentype"), url("fonts/icomoon.woff?-qcoqj4") format("woff"), url("fonts/icomoon.ttf?-qcoqj4") format("truetype"), url("fonts/icomoon.svg?-qcoqj4#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 ::-moz-selection {
-  background: #62aaf2;
+  background: #8ccedc;
   color: #fff;
   text-shadow: none;
 }
 
 ::selection {
-  background: #62aaf2;
+  background: #8ccedc;
   color: #fff;
   text-shadow: none;
 }
 
-.icon {
+.icon, .footer-content .socials a:before, .featured-image a:after {
   font-family: "icomoon";
   speak: none;
   font-style: normal;
@@ -890,11 +913,30 @@ h5, h6 {
   width: 100%;
 }
 .featured-image a {
+  position: relative;
   padding: 0.75em 1em;
   background-color: #272432;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.075em;
+}
+.featured-image a:after {
+  content: "\e604";
+  font-size: 34px;
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.featured-image a:hover:after, .featured-image a:focus:after {
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 .photo-gallery {

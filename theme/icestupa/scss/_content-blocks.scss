@@ -62,11 +62,25 @@
     width: 100%;
   }
   a {
+    position: relative;
     padding: em-calc(12) em-calc(16);
     background-color: $dark;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.075em;
+    &:after {
+      content: $icon-plus;
+      @extend .icon;
+      font-size: 34px;
+      position: absolute;
+      right: 10px;
+      top: 4px;
+      @include opacity(0);
+      @include transition(opacity 0.3s ease);
+    }
+    &:hover, &:focus {
+      &:after { @include opacity(1); }
+    }
   }
 }
 
