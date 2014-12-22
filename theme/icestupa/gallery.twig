@@ -7,7 +7,7 @@
         {% for record in records %}
           {% if record.image!="" %}
             <li>
-              <a href="{{ image(record.image) }}">
+              <a href="{{ image(record.image) }}" data-caption="{{ record.title }}">
                 <img src="{{ thumbnail(record.image) }}" alt="{{ record.title }}">
                 <span class="title">{{record.title}}</span>
               </a>

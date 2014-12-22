@@ -54,11 +54,70 @@ html, body {
   position: relative;
   background-color: $blue;
   z-index: 4;
+  .logo-simple {
+    float: left;
+    position: relative;
+    padding:  20px 36px 0 2px;
+    margin-right: em-calc(40);
+    &:before {
+      content: "Home";
+      position: absolute;
+      bottom: -18px;
+      left: -1px;
+      font-size: 12px;
+      line-height: 1;
+      text-transform: uppercase;
+      @include opacity(0);
+      @include transition(opacity 0.2s ease);
+    }
+    &:hover, &:focus {
+      background-color: transparent;
+      &:before { @include opacity(1); }
+    }
+    @media #{$medium-down} {
+      padding: 20px 20px 0;
+      margin-right: 0;
+      &:before { left: 17px; }
+    }
+  }
+  .menu {
+    float: right;
+    text-align: right;
+    @media #{$small-only} {
+      position: absolute;
+      top: 96px;
+      left: 0;
+      width: 100%;
+      background-color: $blue;
+      text-align: center;
+      border-bottom: 10px solid $dark;
+      visibility: hidden;
+      @include opacity(0);
+      @include transition(opacity 0.2s ease);
+      li {
+        display: block;
+        border-top: 1px solid $dark-blue;
+      }
+      a {
+        line-height: em-calc(70);
+      }
+      .menu-donate { display: none; }
+    }
+  }
+  @media #{$small-only} {
+    &.open .menu {
+      visibility: visible;
+      @include opacity(1);
+    }
+    &.open .menu-trigger {
+      background-color: $dark-blue;
+      &:after { display: none; }
+    }
+  }
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: right;
     @include clearfix;
   }
   li {
@@ -83,6 +142,17 @@ html, body {
       color: $dark;
       outline: none;
     }
+    @media #{$medium-down} { padding: 0 em-calc(20); }
+    @media #{$small-only} {
+      &:hover, &:focus { background-color: $blue; }
+    }
+    &.open {
+      background-color: $dark-blue;
+      ~ .dropdown {
+        @include opacity(1);
+        visibility: visible;
+      }
+    }
   }
   .dropdown {
     position: absolute;
@@ -92,6 +162,7 @@ html, body {
     background-color: $blue;
     text-align: left;
     border: 1px solid $dark-blue;
+    z-index: 1;
     @include opacity(0);
     visibility: hidden;
     @include transition(opacity 0.3s ease);
@@ -105,6 +176,25 @@ html, body {
       line-height: 1.2;
       padding: em-calc(16) em-calc(14);
     }
+    @media #{$small-only} {
+      position: relative;
+      top: 0;
+      width: 100%;
+      border: 0;
+      text-align: center;
+      @include opacity(1);
+      visibility: visible;
+      overflow: hidden;
+      @include transition(height 0.4s ease);
+      li {
+        padding: 0;
+        border-top: 1px solid $blue;
+      }
+      a {
+        background-color: $dark-blue;
+        padding: em-calc(25) em-calc(20);
+      }
+    }
   }
   .menu-donate {
     a {
@@ -114,35 +204,55 @@ html, body {
     }
     &:hover a { background-color: #cefffb; }
   }
-  .menu-home {
-    float: left;
-    vertical-align: top;
-    margin-right: em-calc(40);
-    .logo-simple {
+  @media #{$small-only} {
+    .mobile-menu {
+      float: right;
+    }
+    .menu-trigger {
       position: relative;
-      padding:  20px 36px 0 2px;
-      &:before {
-        content: "Home";
+      &:after {
+        content: "";
+        width: 2px;
+        height: 16px;
         position: absolute;
-        bottom: -18px;
-        left: -1px;
-        font-size: 12px;
-        line-height: 1;
-        text-transform: uppercase;
-        @include opacity(0);
-        @include transition(opacity 0.2s ease);
-      }
-      &:hover, &:focus {
-        background-color: transparent;
-        &:before { @include opacity(1); }
+        right: -1px;
+        top: 50%;
+        margin-top: -8px;
+        background-color: $dark;
       }
     }
-    &:hover .logo-simple { background-color: transparent; }
+    .has-dropdown > a {
+      position: relative;
+      &:after {
+        content: $icon-down;
+        position: absolute;
+        right: 20px;
+        top: 24px;
+        font-size: 24px;
+        font-family: $icon-font;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      &.open:after { content: $icon-up; }
+    }
   }
 }
 
 .main-content {
   @include grid-column($columns: 9, $center: true);
+  @media #{$small-only} {
+    width: 100%;
+    padding: 0 em-calc(30);
+  }
+  @media #{$x-small-only} {
+    padding: 0 em-calc(10);
+  }
 }
 
 .page-footer {
@@ -153,6 +263,7 @@ html, body {
 }
 .footer-content {
   @include grid-column($columns: 9, $center: true);
+  @media #{$small-only} { width: 100%; }
   .logo-simple {
     width: 30px;
     height: 50px;
@@ -201,10 +312,28 @@ html, body {
         color: $dark;
         background-color: #fff;
       }
+      @media #{$medium-down} {
+        font-size: 16px;
+        line-height: 1.2;
+        padding: em-calc(14) em-calc(20) em-calc(14) em-calc(50);
+        min-height: 60px;
+        &:before { left: 12px; }
+      }
+      @media #{$small-only} {
+        float: none;
+        width: 100%;
+        max-width: 320px;
+        font-size: 17px;
+        line-height: 60px;
+        padding: 0 em-calc(40, 17) 0 em-calc(60, 17);
+        margin: 0 auto 14px;
+        &:before { left: 30px; }
+      }
     }
     .twitter {
       &:before { content: $icon-twitter; }
       float: right;
+      @media #{$small-only} { float: none; }
     }
     .facebook:before { content: $icon-facebook; }
   }

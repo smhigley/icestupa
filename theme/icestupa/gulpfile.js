@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 var paths = {
   styles: './scss/style.scss',
-  scripts: ['./bower_components/jquery/dist/jquery.min.js', './js/main.js']
+  scripts: ['./bower_components/jquery/dist/jquery.min.js', './bower_components/magnific-popup/dist/jquery.magnific-popup.js', './js/main.js']
 };
 
 gulp.task('styles', ['components'], function () {
@@ -47,7 +47,7 @@ gulp.task('lint', function () {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch('./js/*.js', ['scripts']);
+  gulp.watch('./js/main.js', ['scripts']);
   gulp.watch('./scss/*.scss', ['styles']);
 });
 

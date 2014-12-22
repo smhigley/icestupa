@@ -27,9 +27,13 @@
   <header class="page-header" role="banner">
     <nav class="main-menu" role="navigation">
       <div class="content-row">
+        <a href="{{ paths.root }}" class="logo-simple">{{ app.config.get('general/sitename') }}</a>
         <ul class="menu">
-          <li class="menu-home"><a href="{{ paths.root }}" class="logo-simple">{{ app.config.get('general/sitename') }}</a></li>
           {{ menu('main', '_sub_menu.twig') }}
+          <li class="menu-donate"><a href="/donate">Donate</a></li>
+        </ul>
+        <ul class="mobile mobile-menu">
+          <li><a href="#" class="menu-trigger">Menu</a></li>
           <li class="menu-donate"><a href="/donate">Donate</a></li>
         </ul>
       </div>

@@ -33,9 +33,9 @@ $column-gutter: em-calc(20);
 // media queries
 $xlarge-bound: 1200;
 $large-bound: 960;
-$medium-bound: 880;
-$small-bound: 680;
-$xsmall-bound: 440;
+$medium-bound: 780;
+$small-bound: 600;
+$xsmall-bound: 400;
 
 $x-small-only: "only screen and (max-width: #{em-calc($xsmall-bound, 16)})";
 $small-only: "only screen and (max-width: #{em-calc($small-bound, 16)})";

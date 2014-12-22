@@ -23,6 +23,7 @@
   "dependencies": {
     "jquery": "~1.11.2",
     "monkee-mixins": "latest",
-    "normalize.css": "latest"
+    "normalize.css": "latest",
+    "magnific-popup": "~1.0.0"
   }
 }
