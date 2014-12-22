@@ -45,11 +45,11 @@ a {
 h1, h2, h3, h4 {
   text-align: center;
   line-height: #{(30/27)};
-  margin: 40px 0 20px;
+  margin: 40px 0 30px;
 }
 
 h1 + h2, h2 + h3, h3 + h4 {
-  margin-top: -10px;
+  margin-top: -15px;
 }
 
 h1 {
