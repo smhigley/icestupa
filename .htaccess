@@ -39,6 +39,3 @@ Options -Indexes -MultiViews
 #<IfModule mod_mime.c>
 #  AddType application/font-woff2    woff2
 #</IfModule>
-
-# PHP version 5.4
-# AddHandler application/x-httpd-php54 .php

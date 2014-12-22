@@ -1123,6 +1123,9 @@ h5, h6 {
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
+.featured-image a:hover, .featured-image a:focus {
+  outline: none;
+}
 .featured-image a:hover:after, .featured-image a:focus:after {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -1561,6 +1564,7 @@ img.mfp-img {
 
 .mfp-image-holder .mfp-content {
   max-width: 100%;
+  padding: 3.125em 0;
 }
 
 .mfp-gallery .mfp-image-holder .mfp-figure {

@@ -81,6 +81,7 @@
       @include transition(opacity 0.3s ease);
     }
     &:hover, &:focus {
+      outline: none;
       &:after { @include opacity(1); }
     }
   }

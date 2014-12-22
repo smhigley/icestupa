@@ -24,6 +24,26 @@ try { console.assert(1); } catch(e) { console = { log: function() {}, assert: fu
     },
   });
 
+  $('.featured-image').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    image: {
+      titleSrc:  function(item) {
+        return $(item.el).siblings('img').attr('alt');
+      },
+      tError: '<a href="%url%">The image</a> could not be loaded.' // Error message
+    },
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'animate-popup',
+    callbacks: {
+      beforeOpen: function() {
+        // just a hack that adds mfp-anim class to markup 
+        this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-anim');
+      }
+    },
+  });
+
   // mobile menu
   if ( Modernizr.mq('only screen and (max-width:600px)')) {
 
