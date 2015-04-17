@@ -89,7 +89,10 @@ h5, h6 { font-weight: bold; }
     color: $dark-grey;
     margin: 0 0 em-calc(30, 17);
   }
-  img { max-width: 100%; }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
   p img { margin: em-calc(10) em-calc(20) em-calc(30); }
 }
 
