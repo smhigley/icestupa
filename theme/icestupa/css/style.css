@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -543,14 +544,14 @@ html, body {
 .main-menu .logo-simple {
   float: left;
   position: relative;
-  padding: 20px 36px 0 2px;
+  padding: 18px 36px 0 2px;
   margin-right: 2.5em;
 }
 .main-menu .logo-simple:before {
   content: "Home";
   position: absolute;
   bottom: -18px;
-  left: -1px;
+  left: 3px;
   font-size: 12px;
   line-height: 1;
   text-transform: uppercase;
@@ -765,7 +766,7 @@ html, body {
     position: relative;
   }
   .main-menu .has-dropdown > a:after {
-    content: "\e606";
+    content: "";
     position: absolute;
     right: 20px;
     top: 24px;
@@ -781,7 +782,7 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
   }
   .main-menu .has-dropdown > a.open:after {
-    content: "\e609";
+    content: "";
   }
 }
 
@@ -911,7 +912,7 @@ html, body {
   float: right;
 }
 .footer-content .socials .twitter:before {
-  content: "\e601";
+  content: "";
 }
 @media only screen and (max-width: 37.5em) {
   .footer-content .socials .twitter {
@@ -919,7 +920,7 @@ html, body {
   }
 }
 .footer-content .socials .facebook:before {
-  content: "\e602";
+  content: "";
 }
 
 @font-face {
@@ -1037,9 +1038,13 @@ h5, h6 {
 .logo-simple:after {
   content: "";
   display: block;
-  width: 30px;
-  height: 50px;
-  background: url(../images/logo-simple.png) no-repeat center center;
+  width: 40px;
+  height: 51px;
+  background: url(../images/logo-simple.svg) no-repeat center center;
+  background-size: 100%;
+}
+.no-svg .logo-simple:after {
+  background-image: url(../images/logo-simple.png);
 }
 
 .hero {
@@ -1065,12 +1070,16 @@ h5, h6 {
 }
 .hero .logo {
   display: block;
-  width: 236px;
-  height: 138px;
+  width: 262px;
+  height: 140px;
   margin: 0 auto 8.375em;
-  background: url(../images/logo-white.png) no-repeat center center;
+  background: url(../images/logo-white.svg) no-repeat center center;
+  background-size: 100% 100%;
   text-indent: -999px;
   overflow: hidden;
+}
+.no-svg .hero .logo {
+  background-image: url(../images/logo-white.png);
 }
 .hero .tagline {
   display: block;
@@ -1111,7 +1120,7 @@ h5, h6 {
   letter-spacing: 0.075em;
 }
 .featured-image a:after {
-  content: "\e604";
+  content: "";
   font-size: 34px;
   position: absolute;
   right: 10px;
@@ -1454,7 +1463,7 @@ button::-moz-focus-inner {
   line-height: 0;
 }
 .mfp-close:after {
-  content: "\e605";
+  content: "";
   font-size: 30px;
   line-height: 1;
   -webkit-transition: color 0.2s ease;
@@ -1504,13 +1513,13 @@ button::-moz-focus-inner {
   left: 6px;
 }
 .mfp-arrow.mfp-arrow-left:before {
-  content: "\e607";
+  content: "";
 }
 .mfp-arrow.mfp-arrow-right {
   right: 6px;
 }
 .mfp-arrow.mfp-arrow-right:before {
-  content: "\e608";
+  content: "";
 }
 
 .mfp-iframe-holder {
@@ -1712,3 +1721,5 @@ img.mfp-img {
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
+
+/*# sourceMappingURL=style.css.map */

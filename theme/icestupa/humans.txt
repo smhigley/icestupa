@@ -1,0 +1,10 @@
+# The humans responsible & technology colophon
+# humanstxt.org
+
+  Sarah Higley     -- Development + Site Administration
+  Autumn Hutchins  -- Design
+
+/* SITE */
+    Standards: HTML, CSS, JavaScript
+    Components: Modernizr, jQuery, SASS, GulpJS, Yaml
+    Software: Bolt CMS, Git

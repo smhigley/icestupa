@@ -57,13 +57,13 @@ html, body {
   .logo-simple {
     float: left;
     position: relative;
-    padding:  20px 36px 0 2px;
+    padding:  18px 36px 0 2px;
     margin-right: em-calc(40);
     &:before {
       content: "Home";
       position: absolute;
       bottom: -18px;
-      left: -1px;
+      left: 3px;
       font-size: 12px;
       line-height: 1;
       text-transform: uppercase;

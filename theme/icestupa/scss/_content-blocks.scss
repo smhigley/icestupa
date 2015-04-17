@@ -5,9 +5,11 @@
   &:after {
     content: "";
     display: block;
-    width: 30px;
-    height: 50px;
-    background: url(../images/logo-simple.png) no-repeat center center;
+    width: 40px;
+    height: 51px;
+    background: url(../images/logo-simple.svg) no-repeat center center;
+    background-size: 100%;
+    .no-svg & { background-image: url(../images/logo-simple.png); }
   }
 }
 
@@ -32,12 +34,14 @@
   }
   .logo {
     display: block;
-    width: 236px;
-    height: 138px;
+    width: 262px;
+    height: 140px;
     margin: 0 auto em-calc(134);
-    background: url(../images/logo-white.png) no-repeat center center;
+    background: url(../images/logo-white.svg) no-repeat center center;
+    background-size: 100% 100%;
     text-indent: -999px;
     overflow: hidden;
+    .no-svg & { background-image: url(../images/logo-white.png); }
   }
   .tagline {
     display: block;
