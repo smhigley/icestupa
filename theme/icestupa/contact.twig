@@ -1,0 +1,37 @@
+{% include '_header.twig' %}
+{% setcontent record = 'page/contact' %}
+
+  <div class="row">
+    <div class="main-content">
+      <div class="page-icon">
+        <img src="{{ paths.theme ~ 'images/pageicon-' ~ record.pageicon|replace(' ', '-')|lower }}.png" alt="{{ record.pageicon }}">
+      </div>
+      <h1 class="page-title">{{ record.title }}</h1>
+      {{ record.body }}
+      <div class="contact-form">
+        <div id="wufoo-z1x5jg51lftotp">
+        If the form fails to load, please <a href="https://icestupa.wufoo.com/forms/z1x5jg51lftotp">click here</a> to fill out on Wufoo.
+        </div>
+        <script type="text/javascript">var z1x5jg51lftotp;(function(d, t) {
+        var s = d.createElement(t), options = {
+        'userName':'icestupa',
+        'formHash':'z1x5jg51lftotp',
+        'autoResize':true,
+        'height':'562',
+        'async':true,
+        'host':'wufoo.com',
+        'header':'show',
+        'ssl':false};
+        s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+        s.onload = s.onreadystatechange = function() {
+        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+        try { z1x5jg51lftotp = new WufooForm();z1x5jg51lftotp.initialize(options);z1x5jg51lftotp.display(); } catch (e) {}};
+        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+        })(document, 'script');</script>
+      </div>
+    </div><!-- /.main-content -->
+  </div>
+
+
+
+    {% include '_footer.twig' %}

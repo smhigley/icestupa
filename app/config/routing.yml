@@ -44,6 +44,10 @@ contentlisting:
   requirements:
     contenttypeslug:  'Bolt\Controllers\Routing::getPluralContentTypeRequirement'
 
+templatebinding:
+      path: /contact
+      defaults: { _controller: 'Bolt\Controllers\Frontend::template', template: 'contact' }
+
 pagebinding:
   path:           /{slug}
   defaults:       { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'page' }

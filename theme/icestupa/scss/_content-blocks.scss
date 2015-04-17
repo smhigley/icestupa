@@ -168,3 +168,28 @@
     .more-link:after { display: none; }
   }
 }
+
+.pagination {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  li { display: inline-block; }
+  a {
+    display: block;
+    padding: em-calc(4) em-calc(12);
+    background-color: #fff;
+    &:hover {
+      color: #fff;
+      background-color: $dark-blue;
+    }
+  }
+  .active a {
+    color: $dark;
+    &:hover {
+      background-color: #fff;
+      color: $dark;
+      cursor: default;
+    }
+  }
+}

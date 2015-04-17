@@ -21,6 +21,13 @@ gulp.task('styles', ['components'], function () {
     .pipe(minifyCSS())
     .pipe(size())
     .pipe(gulp.dest('./css/'));
+
+  gulp.src('./scss/wufoo.scss')
+    .pipe(sass({ style: 'expanded' }))
+    .pipe(concat('wufoo.css'))
+    .pipe(minifyCSS())
+    .pipe(size())
+    .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('components', function() {
